@@ -4,7 +4,6 @@ command  = 'clear'
 os.system(command)
 import numpy as np
 import time
-command  = 'clear'
 sleep_time = 2
 
 Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
