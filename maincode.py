@@ -6,8 +6,9 @@ import numpy as np
 import time
 sleep_time = 2
 
-Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
-                  [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]])
+Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], 
+[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]])
 
 Decision_In_Making = False
 while Decision_In_Making == False:
@@ -45,4 +46,5 @@ while Decision_In_Making == False:
             
         os.system(command)
 if Decision != "Win" or "Loose":
+    os.system(command)
     print("You ended the game early")
