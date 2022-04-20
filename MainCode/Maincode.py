@@ -1,19 +1,17 @@
 from curses.ascii import isdigit
 import os
 from secrets import choice
-
-command = 'clear'
+command  = 'clear'
 os.system(command)
 import numpy as np
 import time
 import random
-
 sleep_time = 2
 Useable_Numbers = (1, 2, 3, 4, 5, 6, 7)
 
-Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
-                  [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
-                  [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]])
+Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], 
+[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]])
 
 Decision_In_Making = False
 while Decision_In_Making == False:
@@ -28,7 +26,7 @@ while Decision_In_Making == False:
             Decision_In_Making = True
         else:
             #Checking if User input is an integer so it don't crash when converted into integer
-            is_that_an_integer = User_Input.isdigit()
+            is_that_an_integer  = User_Input.isdigit()
             if is_that_an_integer == True:
                 User_Input = int(User_Input)
                 #Checking if the column exists so it don't crash
@@ -67,27 +65,24 @@ while Decision_In_Making == False:
         print("Bot turn")
         Bot_Turn = True
         while Bot_Turn == True:
-            rand_Bot_Numb = choice(Useable_Numbers)
-            rand_Bot_Numb = rand_Bot_Numb - 1
-            if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
-                (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 2
-                print(Board)
-                time.sleep(2)
-                os.system(command)
-                Bot_Board_Counterupper = 5
-                Bot_Turn = False
-                User_Has_Turn = True
-            else:
-                if Bot_Board_Counterupper > 0:
-                    print("BOguS")
-                    Bot_Board_Counterupper = Bot_Board_Counterupper - 1
-                else:
-                  print("BOgus")
-                  Bot_Turn = False
+          Bot_Board_Counterupper = 5
+          rand_Bot_Numb = choice(Useable_Numbers)
+          rand_Bot_Numb = rand_Bot_Numb - 1
+          if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
+              (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 2    
+              print(Board)
+              time.sleep(sleep_time)
+              os.system(command)
+              Bot_Turn = False
+              User_Has_Turn = True
+          else:
+              if Bot_Board_Counterupper > 0:
+                  Bot_Board_Counterupper = Bot_Board_Counterupper - 1   
+              else: Bot_Turn = False
 
 if Decision == "Win" or "Loose":
     os.system(command)
-    print("You" + Decision)
+    print("You" + Decision )
 else:
     os.system(command)
     print("You ended the game to early")
