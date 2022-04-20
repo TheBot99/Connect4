@@ -63,17 +63,22 @@ while Decision_In_Making == False:
     while User_Has_Turn == False:
         Bot_Board_Counterupper = 5
         print("Bot turn")
-        rand_Bot_Numb = choice(Useable_Numbers)
-        rand_Bot_Numb = rand_Bot_Numb - 1
-        if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
-            (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 1    
-            print(Board)
-            time.sleep(sleep_time)
-            os.system(command)
-            User_Has_Turn = True
-        else:
-            if Bot_Board_Counterupper > 0:
-                Bot_Board_Counterupper = Bot_Board_Counterupper - 1   
+        Bot_Turn = True
+        while Bot_Turn == True:
+          Bot_Board_Counterupper = 5
+          rand_Bot_Numb = choice(Useable_Numbers)
+          rand_Bot_Numb = rand_Bot_Numb - 1
+          if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
+              (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 2    
+              print(Board)
+              time.sleep(sleep_time)
+              os.system(command)
+              Bot_Turn = False
+              User_Has_Turn = True
+          else:
+              if Bot_Board_Counterupper > 0:
+                  Bot_Board_Counterupper = Bot_Board_Counterupper - 1   
+              else: Bot_Turn = False
 
 if Decision == "Win" or "Loose":
     os.system(command)
