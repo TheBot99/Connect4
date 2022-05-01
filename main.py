@@ -9,7 +9,8 @@ import time
 import random
 
 sleep_time = 2
-Useable_Numbers = (1, 2, 3, 4, 5, 6, 7)
+Useable_Numbers = (0, 1, 2, 3, 4, 5, 6)
+Quit = False
 
 Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
                   [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
@@ -25,6 +26,8 @@ while Decision_In_Making == False:
         User_Input = input(
             "What is the column number that you want to drop into: ")
         if User_Input == "stop":
+            Quit = True
+            User_Has_Turn = False
             Decision_In_Making = True
         else:
             #Checking if User input is an integer so it don't crash when converted into integer
@@ -62,28 +65,32 @@ while Decision_In_Making == False:
                 print("That is not a number")
                 time.sleep(sleep_time)
                 os.system(command)
-    while User_Has_Turn == False:
-        Bot_Board_Counterupper = 5
-        print("Bot turn")
-        Bot_Turn = True
-        while Bot_Turn == True:
-            rand_Bot_Numb = choice(Useable_Numbers)
-            rand_Bot_Numb = rand_Bot_Numb - 1
-            if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
-                (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 2
-                print(Board)
-                time.sleep(2)
-                os.system(command)
-                Bot_Board_Counterupper = 5
-                Bot_Turn = False
-                User_Has_Turn = True
-            else:
-                if Bot_Board_Counterupper > 0:
-                    print("BOguS")
-                    Bot_Board_Counterupper = Bot_Board_Counterupper - 1
-                else:
-                  print("BOgus")
+    if Quit == False:
+      while User_Has_Turn == False:
+          Bot_Board_Counterupper = 5
+          print("Bot turn")
+          Bot_Turn = True
+          while Bot_Turn == True:
+              rand_Bot_Numb = choice(Useable_Numbers)
+              print(rand_Bot_Numb)
+              print(rand_Bot_Numb)
+              print("Bot")
+              print(Bot_Board_Counterupper)
+              if (Board[Bot_Board_Counterupper, rand_Bot_Numb]) == 0:
+                  (Board[Bot_Board_Counterupper, rand_Bot_Numb]) = 2
+                  print(Board)
+                  time.sleep(2)
+                  os.system(command)
+                  Bot_Board_Counterupper = 5
                   Bot_Turn = False
+                  User_Has_Turn = True
+              else:
+                  if Bot_Board_Counterupper > 0:
+                      print("BOguS")
+                      Bot_Board_Counterupper = Bot_Board_Counterupper - 1
+                  else:
+                    print("BOgus")
+                    Bot_Turn = False
 
 if Decision == "Win" or "Loose":
     os.system(command)
