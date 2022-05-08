@@ -4,5 +4,7 @@ import os
 #function
 def userturnfunction():
     os.system(command)
-    input("What is the Column That you want to drop the coin into")
+    UserNumb = input("What is the Column That you want to drop a coin into: ")
+    print(UserNumb)
+    os.system(command)
 
