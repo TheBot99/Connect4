@@ -3,6 +3,9 @@ import os
 from secrets import choice
 
 command = 'clear'
+not_started = True
+random_numbers_for_start = (0, 1, 2)
+x = choice(random_numbers_for_start)
 os.system(command)
 import numpy as np
 import time
@@ -15,6 +18,27 @@ Quit = False
 Board = np.array([[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
                   [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
                   [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]])
+
+while not_started == True:
+  if x == 5:
+    not_started = False
+  else:
+    print("starting up |")
+    time.sleep(0.3)
+    os.system(command)
+    print("starting up /")
+    time.sleep(0.3)
+    os.system(command)
+    print("starting up --")
+    time.sleep(0.3)
+    os.system(command)
+    print("starting up \\")
+    time.sleep(0.3)
+    os.system(command)
+    x = x+1
+print("done starting")
+time.sleep(0.5)
+os.system(command)
 
 Decision_In_Making = False
 while Decision_In_Making == False:
