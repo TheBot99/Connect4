@@ -16,7 +16,7 @@ from userturn import userturnfunction
 from start import startup
 
 #The code for intro and startup
-
+startup()
 
 #The game loop
 Game_is_not_finished = False
