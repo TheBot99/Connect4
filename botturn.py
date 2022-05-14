@@ -1,7 +1,9 @@
 from staticvariebles import command
 import os
-import time
+from staticvariebles import Board
 
 def BotTurn():
+    os.system(command)
     print("This is the bot turn")
-    time.sleep(2)
+    print(Board)
+    input("Press Enter to move on ")

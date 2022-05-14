@@ -2,7 +2,6 @@
 from curses.ascii import isdigit
 
 from secrets import choice
-import time
 import random
 from botturn import BotTurn
 #functions to check if it is a win
