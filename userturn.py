@@ -13,23 +13,24 @@ def userturnfunction():
     if isdigit(UserNumb) == True:
       UserNumb = int(UserNumb)
       UserNumb = UserNumb - 1
-      if UserNumb < 7 and UserNumb > -1:
-        os.system(command)
-        placing = True
-        while placing  == True:
-          if (Board[x, UserNumb]) == 0:
-            (Board[x, UserNumb]) = 1
-            print(Board)
-            placing = False
-          else:
-              x = x-1
-              if x < -1:
-                print("That column is full")
-                time.sleep(3)
-                userturnfunction()
+      if (Board[0, UserNumb]) == 0:
+        if UserNumb < 7 and UserNumb > -1:
+          os.system(command)
+          placing = True
+          while placing  == True:
+            if (Board[x, UserNumb]) == 0:
+              (Board[x, UserNumb]) = 1
+              print(Board)
+              placing = False
+            else:
+                x = x-1
+        else:
+          print("That is not a column on the Connect 4 board")
+          time.sleep(3)
+          userturnfunction()
       else:
-        print("That is not a column on the Connect 4 board")
-        time.sleep(3)
+        print("That column if full")
+        time.sleep(2)
         userturnfunction()
     else:
       print("That is not a number")
