@@ -9,6 +9,7 @@ from check_if_in_4 import checkall
 #to check how it wins
 from staticvariebles import how_it_ends
 #check if board is empty
+from check_if_board_empty import check_empty
 #fuction for the user turn
 from userturn import userturnfunction
 
@@ -34,9 +35,15 @@ Game_is_not_finished = False
 while Game_is_not_finished == False:
     UserTurn = True
     if UserTurn == True:
+        check_empty()
+        Ending(how_it_ends)
         userturnfunction()
+        check_empty()
         Ending(how_it_ends)
         UserTurn = False
     if UserTurn == False:
+        check_empty()
+        Ending(how_it_ends)
         BotTurn()
+        check_empty()
         Ending(how_it_ends)

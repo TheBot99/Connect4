@@ -18,4 +18,4 @@ def check_empty():
         open.append(6)
     
     if open == []:
-        how_it_ends
+        how_it_ends.append("no win")

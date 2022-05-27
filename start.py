@@ -111,6 +111,7 @@ def intro():
 
         
 def Ending(how_end):
-  if how_end == "no win":
+  if how_end == ["no win"]:
+    os.system(command)
     print("Nobody won")
     exit(1)

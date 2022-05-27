@@ -1,5 +1,6 @@
 def checkall():
     def check_diagonal(x):
+        
         print(x)
     def check_vertical(y):
         print(y)
