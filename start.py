@@ -108,3 +108,9 @@ def intro():
         os.system(command)
         print("Welcome to Connect 4")
         time.sleep(2)
+
+        
+def Ending(how_end):
+  if how_end == "no win":
+    print("Nobody won")
+    exit(1)
