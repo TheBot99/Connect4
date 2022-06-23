@@ -1,6 +1,6 @@
 #all the import needed
 from curses.ascii import isdigit
-
+import time
 from secrets import choice
 import random
 from botturn import BotTurn
@@ -38,12 +38,13 @@ while Game_is_not_finished == False:
         check_empty()
         Ending(how_it_ends)
         userturnfunction()
+        checkall()
         check_empty()
         Ending(how_it_ends)
+        
         UserTurn = False
     if UserTurn == False:
         check_empty()
         Ending(how_it_ends)
         BotTurn()
-        check_empty()
         Ending(how_it_ends)

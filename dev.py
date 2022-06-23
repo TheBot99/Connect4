@@ -1,4 +1,4 @@
-from this import d
-from pynput import keyboard
+import time
+from pynput.keyboard import Key, Listener
 def DevMode():
-    keyboard.Listener(d)
+  print("t")

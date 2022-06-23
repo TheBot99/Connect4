@@ -115,3 +115,11 @@ def Ending(how_end):
     os.system(command)
     print("Nobody won")
     exit(1)
+  if how_end == ["bot"]:
+    os.system(command)
+    print("The Bot Won")
+    exit(1)
+  if how_end == ["user"]:
+    os.system(command)
+    print("The User Won")
+    exit(1)

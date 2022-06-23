@@ -1,11 +1,15 @@
 from staticvariebles import command
 from staticvariebles import how_it_ends
+from check_if_board_empty import check_empty
+from check_if_in_4 import checkall
 import os
 from staticvariebles import Board
 from secrets import choice
 Useable_Numbers = []
 
 def BotTurn():
+    check_empty()
+    checkall()
     Useable_Numbers = []
     x = 5
     os.system(command)
@@ -40,4 +44,6 @@ def BotTurn():
     #just printing and moving on
     print("This is the bot turn")
     print(Board)
+    check_empty()
+    checkall()
     input("Press Enter to move on ")
